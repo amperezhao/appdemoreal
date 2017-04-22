@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑，PingFangSC-Medium;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 603px;
+            height: 100%;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 478px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        a {
+            text-display: none;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        .app {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            overflow-x: hidden;;
+        }
+
+        .app_box {
+            background: #f1f4fc;
+            width: 150%;
+            height: 100%;
+        }
+
+        /*app_menu*/
+
+        .app_menu {
+            background: #f1f4fc;
+            float: left;
+            width: 33%;
+            height: 100%;
+            margin-left: -33%;
+            padding-top: 5px;
+        }
+
+        .app_menu .menu_item {
+            width: 100%;;
+            min-height: 34px;
+            line-height: 34px;
+            font-size: 0.8rem;
+            color: #232d4f;
+            letter-spacing: -0.29px;
+            padding-left: 20%;
+        }
+
+        .menu_active {
+            background: #7186c7 !important;
+            color: #ffffff !important;;
+        }
+
+        .img_hide {
+            background: url('image/hide.png') no-repeat 90% 14px;
+        }
+
+        .img_show {
+            background: url('image/show.png') no-repeat 90% 16px;
+        }
+
+        .menu_item ul {
+            width: 100%;
+            padding-left: 10%;
+
+        }
+
+        .menu_item ul li {
+            font-family: PingFangSC-Light;
+            font-size: 0.67rem;
+            color: #232d4f;
+            letter-spacing: -0.25px;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        /*app_content*/
+
+        .app_content {
+            float: left;
+            width: 67%;
+            height: 100%;
+            background-color: #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .app_controller {
+            width: 20px;
+            height: 20px;
+            background-color: #d0d0d0;
+            margin-top: 16px;
+            margin-left: 16px;
+        }
+
+        .bg1 {
+            background: url("image/bg1.png") no-repeat center;
+            background-size: cover;
+        }
+
+        .bg2 {
+            background: url("image/bg2.png") no-repeat center;
+            background-size: cover;
+        }
+
+        .app_content_main {
+            width: 100%;
+            height: auto;
+            margin-top: 28px;
+        }
+
+        .main_item {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;;
+        }
+
+        .main_item span {
+            display: inline-block;
+            width: 33%;
+            text-align: right;
+            font-family: PingFangSC-Regular;
+            font-size: 0.82rem;
+            letter-spacing: -0.29px;
+            padding-right: 3%;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            background: #f1f4fc;
+            border-radius: 5px;
+            width: 51%;
+            height: 18px;
+            font-family: PingFangSC-Regular;
+            font-size: 0.8rem;
+            color: #37477a;
+            letter-spacing: -0.25px;
+            padding-left: 4%;
+        }
+
+        .main_controller {
+            background: #7186c7;
+            border: 1px solid #357ebd;
+            border-radius: 5px;
+            width: 111px;
+            height: 24px;
+            line-height: 20px;
+            font-family: PingFangSC-Regular;
+            font-size: 0.8rem;
+            color: #ffffff;
+            text-align: center;
+            margin: 50px auto 0;
+        }
+
+        .main_item_img {
+            width: 80%;
+            margin: 20px auto 0;
+            height: 230px;
+            /*border: 1px solid #000;*/
+
+        }
+
+        .img_title {
+            font-family: PingFangSC-Regular;
+            font-size: 0.82rem;
+            letter-spacing: -0.29px;
+            padding-left: 8%;
+            margin-top: 2px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .img_bg {
+            position: relative;
+            background: url("image/2.png") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: 100%;
+            border-radius: 4px;
+            margin-left: 13%;
+            width: 87%;
+            height: 153px;
+        }
+
+        .img_main {
+            width: 0%;
+            height: 153px;
+            background: url("image/2_1.png") no-repeat left;
+
+        }
+        .img_bg .img_main_2{
+            background: url("image/1.png") no-repeat left;
+        }
+
+        .img_bg span {
+            display: inline-block;
+            width: 60px;
+            font-family: PingFangSC-Regular;
+            font-size: 0.63rem;
+            color: #8e9091;
+            position: absolute;
+        }
+
+        .p1, .p2, .p3, .p4, .p5 {
+            left: -14%;
+        }
+
+        .p1 {
+            top: -7%;
+        }
+
+        .p2 {
+            top: 7%;
+        }
+
+        .p3 {
+            top: 33%
+        }
+
+        .p4 {
+            top: 59%
+        }
+
+        .p5 {
+            top: 85%
+        }
+
+        .p6, .p7, .p8, .p9 {
+            bottom: -16%
+        }
+
+        .p6 {
+            left: -1%
+        }
+
+        .p7 {
+            left: 27%
+        }
+
+        .p8 {
+            left: 57%;
+        }
+
+        .p9 {
+            left: 85%;
+        }
+
+        .p10 {
+            width: 60px;
+            left: 83%;
+            bottom: -30%;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="app_box">
+        <!--菜单-->
+        <div class="app_menu">
+            <div class="menu_item menu_active menu_btn menu_1_show" id="menu_1" data_menu="menu_1_show">
+                基本信息
+            </div>
+            <div class="menu_item img_hide menu_2_show">
+                运检数据
+                <ul>
+                    <li id="menu_2" class="menu_btn" data_menu="menu_2_show">试验报告</li>
+                    <li>开关变位信息</li>
+                    <li>状态评价</li>
+                    <li>巡视数据</li>
+                </ul>
+            </div>
+            <div class="menu_item img_hide menu_3_show">
+                设备生命大事记
+                <ul>
+                    <li>设备变更信息</li>
+                    <li>缺陷记录</li>
+                    <li id="menu_3" class="menu_btn" data_menu="menu_3_show">家族缺陷</li>
+                    <li>故障记录</li>
+                    <li>检修记录</li>
+                </ul>
+            </div>
+            <div class="menu_item img_hide">
+                管理信息
+                <ul>
+                    <li>保护定值单</li>
+                    <li>保护定值单（配网）</li>
+                </ul>
+            </div>
+
+        </div>
+        <!--内容-->
+        <div class="app_content">
+            <div class="app_controller bg2" id="app_controller">
+            </div>
+            <div class="app_content_main menu_3 main_show" style="margin-bottom: 30px;">
+                <div class="main_item">
+                    <span>设备型号</span>
+                    <input type="text" value="215断路器">
+                </div>
+                <div class="main_item">
+                    <span>额定变比</span>
+                    <input type="text" value="600:1">
+                </div>
+                <div class="main_item_img">
+                    <div class="img_title">试验批次变比变化图</div>
+                    <div class="img_bg">
+                        <span class="p1">变比</span>
+                        <span class="p2">601</span>
+                        <span class="p3">600</span>
+                        <span class="p4">599</span>
+                        <span class="p5">598</span>
+                        <span class="p6">第一次</span>
+                        <span class="p7">第二次</span>
+                        <span class="p8">第三次</span>
+                        <span class="p9">第四次</span>
+                        <span class="p10">试验批次</span>
+                        <div class="img_main">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="main_item_img">
+                    <div class="img_title">同型号设备变比对比图</div>
+                    <div class="img_bg">
+                        <span class="p1">变比</span>
+                        <span class="p2">601</span>
+                        <span class="p3">600</span>
+                        <span class="p4">599</span>
+                        <span class="p5">598</span>
+                        <span class="p6">第一次</span>
+                        <span class="p7">第二次</span>
+                        <span class="p8">第三次</span>
+                        <span class="p9">第四次</span>
+                        <span class="p10">试验批次</span>
+                        <div class="img_main img_main_2">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="main_item">
+                    <span></span>
+                    <input type="hidden" value="">
+                </div>
+
+            </div>
+            <div class="app_content_main  menu_1 main_show">
+                <div class="main_item">
+                    <span>设备名称</span>
+                    <input type="text" value="215断路器">
+                </div>
+                <div class="main_item">
+                    <span>所属电站</span>
+                    <input type="text" value="八仙庄站">
+                </div>
+                <div class="main_item">
+                    <span>所属城市</span>
+                    <input type="text" value="昌平供电公司">
+                </div>
+                <div class="main_item">
+                    <span>维护班组</span>
+                    <input type="text" value="变电运维一班">
+                </div>
+                <div class="main_item">
+                    <span>电压等级</span>
+                    <input type="text" value="交流10kV">
+                </div>
+                <div class="main_item">
+                    <span>相数</span>
+                    <input type="text" value="三相">
+                </div>
+                <div class="main_item">
+                    <span>投运日期</span>
+                    <input type="text" value="2012-12-30 00:00:00">
+                </div>
+                <div class="main_item">
+                    <span>是否农网</span>
+                    <input type="text" value="否">
+                </div>
+                <div class="main_item">
+                    <span>是否代维</span>
+                    <input type="text" value="否">
+                </div>
+                <div class="main_item">
+                    <span>型号</span>
+                    <input type="text" value="3A54-12/1250-25">
+                </div>
+                <div class="main_item">
+                    <span>制造国家</span>
+                    <input type="text" value="CN">
+                </div>
+                <div class="main_item">
+                    <span>出厂编号</span>
+                    <input type="text" value="CN">
+                </div>
+                <div class="main_item">
+                    <span>热稳定电流</span>
+                    <input type="text" value="25">
+                </div>
+                <div class="main_item">
+                    <span>合闸时间</span>
+                    <input type="text" value="50">
+                </div>
+                <div class="main_item">
+                    <span>操作机构型式</span>
+                    <input type="text" value="弹簧">
+                </div>
+                <div class="main_controller" id="main_controller1">
+                    修改
+                </div>
+                <div class="main_item">
+                    <span></span>
+                    <input type="hidden" value="">
+                </div>
+
+            </div>
+            <div class="app_content_main menu_2 main_show">
+                <div class="main_item">
+                    <span>试验人</span>
+                    <input type="text" value="215断路器">
+                </div>
+                <div class="main_item">
+                    <span>试验项目</span>
+                    <input type="text" value="八仙庄站">
+                </div>
+                <div class="main_item">
+                    <span>试验时间</span>
+                    <input type="text" value="昌平供电公司">
+                </div>
+
+                <div class="main_controller " id="main_controller2">
+                    修改
+                </div>
+                <div class="main_item">
+                    <span></span>
+                    <input type="hidden" value="">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    $(function () {
+        /*
+         * 菜单展示/隐藏
+         * */
+        var flag_menu = true;
+        $("#app_controller").on("click", function () {
+            if (flag_menu) {
+                console.log("-");
+                $(".app_menu").animate({marginLeft: '0'});
+                flag_menu = !flag_menu;
+            } else {
+                $(".app_menu").animate({marginLeft: '-33%'});
+                flag_menu = !flag_menu;
+            }
+            ;
+            if ($(this).hasClass("bg1")) {
+                $(this).removeClass("bg1").addClass("bg2");
+            } else {
+                $(this).removeClass("bg2").addClass("bg1");
+            }
+        });
+        /*
+         * 导航
+         * */
+        $(".menu_item ul").slideToggle();
+        $(".menu_item").on("click", function () {
+            $(this).find('ul').slideToggle();
+            if ($(this).hasClass('img_hide')) {
+                $(this).removeClass("img_hide").addClass('img_show');
+                return;
+            }
+            ;
+            if ($(this).hasClass('img_show')) {
+                $(this).removeClass("img_show").addClass('img_hide');
+                return;
+            }
+        });
+        $(".menu_item ul").on("click", function (event) {
+            event.stopPropagation();
+        });
+        /*
+         * 输入框
+         * */
+        $('input').attr("disabled", 'disabled')
+        /*
+         * 修改/保存
+         * */
+        var ipt_flag1 = true;
+        $("#main_controller1").on("click", function () {
+            if (ipt_flag1) {
+                console.log(1);
+                $('.menu_1 input').removeAttr("disabled");
+                var str = $('.menu_1 input').eq(0).val();
+                $('.menu_1 input').eq(0).val("").focus().val(str);
+                $(this).text("保存")
+            } else {
+                $('.menu_1 input').attr("disabled", 'disabled');
+                $(this).text("修改")
+            }
+            ;
+            ipt_flag1 = !ipt_flag1;
+        });
+        var ipt_flag2 = true;
+        $("#main_controller2").on("click", function () {
+            if (ipt_flag2) {
+                $('.menu_2 input').removeAttr("disabled");
+                var str = $('.menu_2 input').eq(0).val();
+                $('.menu_2 input').eq(0).val("").focus().val(str);
+                $(this).text("保存")
+            } else {
+                $('.menu_2 input').attr("disabled", 'disabled');
+                $(this).text("修改")
+            }
+            ;
+            ipt_flag2 = !ipt_flag2;
+        });
+        /*
+         *
+         * 菜单切换
+         * */
+        $(".menu_btn").on("click", function () {
+            $("#app_controller").trigger("click");
+            var target = $(this).attr("id");
+            $(".app_content_main").hide();
+            $("." + target).show();
+            $('title').text($(this).text());
+//            $(".menu_item ").removeClass("menu_active ");
+//            $("."+$(this).attr("data_menu")).addClass("menu_active")
+
+                if (target == "menu_3") {
+                    animate_show();
+                } else {
+                    animate_hide();
+                }
+
+
+        });
+        $(".app_content_main").hide();
+        $(".menu_1").show();
+        /*
+         *
+         * 家族缺陷动画
+         * */
+
+//        function animate_init() {
+//            var width_num = $(".img_bg").width() + "px";
+//            $('.img_bg').css('background-size', width_num + " 153px");
+//        }
+
+        function animate_show() {
+            var width_num = $(".img_bg").width() + "px";
+            $('.img_main').css('background-size', width_num + " 153px");
+            $('.img_bg').css('background-size', width_num + " 153px");
+            $('.img_main').animate({width: '100%'}, 2000);
+        };
+        function animate_hide() {
+            $('.img_main').animate({width: '0%'}, 300);
+        }
+
+
+    });
+</script>
+</body>
+</html>
